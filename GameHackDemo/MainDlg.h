@@ -120,15 +120,15 @@ public:
 
 	void GetGameInfo(CString& sGameName,CString& sInjectDll)
 	{
-		const CString strGameName = _T("elementclient.exe");
-		const CString strDllPath = _T("H:\\Project\\GameHack\\bin\\Debug\\GameHack.dll");
+		const CString strGameName = _T("5pkmir2_hb.dat");
+		const CString strDllPath = _T("D:\\git\\GameHack\\bin\\Debug\\GameHack.dll");
 		sGameName=strGameName;
 		sInjectDll=strDllPath;
 	}
 
     LRESULT OnBnClickedButton1(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
     {
-        const CString sGameName = _T("elementclient.exe");
+        const CString sGameName = _T("5pkmir2_hb.dat");
         CString sInfo;
 
         if(m_gameHelper.Start(sGameName))

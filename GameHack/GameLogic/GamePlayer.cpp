@@ -43,10 +43,12 @@ CString CGamePlayer::GetCurAxis() const
 
 CString CGamePlayer::GetPlayerName() const
 {
-    DWORD dwAddr = m_pConfigFile->GetPlayerName() + m_pConfigFile->GetGameModule();
-    BYTE sName[12] = {0};
+    //DWORD dwAddr = m_pConfigFile->GetPlayerName() + m_pConfigFile->GetGameModule();
+	DWORD dwAddr = m_pConfigFile->GetPlayerName() + GetGameBase();
+	m_pProHelper->ReadMemory((LPCVOID)dwAddr, &dwAddr, sizeof(dwAddr));
+    BYTE sName[20] = {0};
     m_pProHelper->ReadMemory((LPCVOID)dwAddr, sName, sizeof(sName));
     CString sPlayerName;
-    sPlayerName.Format(_T("人物名称：%s") , sName);
+	sPlayerName.Format(_T("人物名称：%s"), CStringW(sName));
     return sPlayerName;
 }

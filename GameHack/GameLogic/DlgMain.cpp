@@ -17,7 +17,7 @@ CDlgMain::~CDlgMain(void)
 
 CString CDlgMain::GetConfigPath() const
 {
-	const CString sCfgPath = _T("H:\\Project\\GameHack\\bin\\Debug\\GameHack.ini");
+	const CString sCfgPath = _T("D:\\git\\GameHack\\bin\\Debug\\GameHack.ini");
 	return sCfgPath;
 
     TCHAR sModulePath[MAX_PATH] = {0};

@@ -19,9 +19,9 @@ CWinHook::~CWinHook(void)
 
 BOOL CWinHook::HookProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
-    BOOL bKeyUp = lParam & (1 << 31);
+    BOOL bKeyUp = (lParam & (1 << 31)) == 0;
 
-    if((bKeyUp) && (wParam == VK_F8))
+    if((bKeyUp) && (wParam == VK_HOME))
     {
         if(NULL == m_pDlgMain)
         {
